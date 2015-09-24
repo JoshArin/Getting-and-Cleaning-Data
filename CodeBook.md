@@ -54,7 +54,9 @@ std(): Standard deviation
 
 ### Downloading the data on a Windows machine
 filesPath <- "E:/Josh_Arin/Data Specialisation/Getting Data and Cleaning Data/Week 3/Course Project/UCI HAR Dataset"
+
 setwd(filesPath)
+
 if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./data/Dataset.zip")
