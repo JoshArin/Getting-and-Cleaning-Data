@@ -25,16 +25,16 @@ if(!file.exists("./data")){dir.create("./data")}
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl,destfile="./data/Dataset.zip")
 
-###Unzipping DataSet to /data directory
+## Unzipping DataSet to /data directory
 unzip(zipfile="./data/Dataset.zip",exdir="./data")
 
-###Loading the required packages
+##Loading the required packages
 library(dplyr)
 library(data.table)
 library(tidyr)
 
 filesPath <- "E:/Josh_Arin/Data Specialisation/Getting Data and Cleaning Data/Week 3/Course Project/UCI HAR Dataset"
-# Reading subject files, activity files and data files
+## Reading subject files, activity files and data files
 dataSubTrain <- tbl_df(read.table(file.path(filesPath, "train", "subject_train.txt")))
 dataSubTest  <- tbl_df(read.table(file.path(filesPath, "test" , "subject_test.txt" )))
 
@@ -44,7 +44,7 @@ dataActTest  <- tbl_df(read.table(file.path(filesPath, "test" , "Y_test.txt" )))
 dataTrain <- tbl_df(read.table(file.path(filesPath, "train", "X_train.txt" )))
 dataTest  <- tbl_df(read.table(file.path(filesPath, "test" , "X_test.txt" )))
 
-### 1. Merging the training and the test datasets to create one Data Set
+## 1. Merging the training and the test datasets to create one Data Set
 ## for both Activity and Subject files this will merge the training and the test datasets by
 ## row-binding and re-name variables "subject" and "activityNum"
 
